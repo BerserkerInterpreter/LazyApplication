@@ -1,0 +1,30 @@
+@CHARSET "ISO-8859-1";
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 15px;
+}
+
+.fieldset {
+	border: none;
+    text-align: center;
+    background: transparent;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -180px;
+    margin-left: -227.5px;
+    padding: 0;
+    width: 455px;
+}
+
+.tituloPrincipal {
+    margin-bottom: 50px;
+}
+
+.cedula.ng-invalid-required {
+	background-color: blue;
+}
