@@ -1,0 +1,47 @@
+<div ng-controller="ControladorPrincipal" class="fieldset">
+	
+	<h1 class="tituloPrincipal">Tech And Solve's Lazy Loading App</h1>
+
+	<form ng-submit="ejecutarArchivo()" name="formularioPrincipal">
+		
+			<span ng-show="formularioPrincipal.cedula.$error.required">
+				Este es un campo requerido
+			</span>
+			<span ng-show="formularioPrincipal.cedula.$error.minlength">
+				La longitud minima requerida es siete
+			</span>
+			<span ng-show="formularioPrincipal.cedula.$error.maxlength">
+				La longitud maxima permitida es once
+			</span>
+			<p/>
+			<input type="number"
+					name="cedula"
+					ng-model="ejecucion.cedula"
+					placeholder="Ingresa tu cedula"
+					ng-minlength="7"
+					ng-maxlength="11"
+					required/>
+		
+			<div class="container">
+	  			<h2>Seleccione un archivo de texto para procesar</h2>
+	    		<input type="file" name="archivo" ng-model="content" on-read-file="showContent($fileContent)" 
+	    			valid-file valid-content required/>
+	    	</div>
+			
+			<p/>
+			<p/>
+			
+			<input type="submit"
+				value="Submit" ng-disabled="formularioPrincipal.$invalid"/>		
+	</form>
+	<p/>
+	<a href="#/ejecucionArchivo" ui-sref="ejecucionArchivo" title="Tabla de ejecuciones">Tabla de ejecuciones</a>
+	
+	<!--  
+	<div ng-if="content">
+		<h2>File content is:</h2>
+		<pre>{{ content }}</pre>
+	</div>
+	-->
+	
+</div>
