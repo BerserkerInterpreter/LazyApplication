@@ -1,0 +1,21 @@
+<div ng-controller="ControladorEjecucionArchivo">
+	<h1>Tabla con ejecuciones de los archivos</h1>
+	<table>
+		<tr>
+			<th>Cedula</th>
+			<th>Fecha</th>
+			<th>Dias/bolsas</th>
+		</tr>
+		<tr ng-repeat="ejecucionArchivo in getEjecucionesArchivo()">
+			<td>{{ejecucionArchivo.cedulaKey}}</td>
+			<td>{{ejecucionArchivo.fechaKey}}</td>
+			<td>
+				<div ng-repeat="lineaImpresion in ejecucionArchivo.lineasImpresionKey">
+					{{lineaImpresion.descripcionLinea}}
+				</div>
+			</td>
+		</tr>
+	</table>
+	<p/>
+	<a href="#/formularioArchivo" ui-sref="formularioArchivo" title="Pagina de inicio">Volver a la pagina de inicio</a>
+</div>
