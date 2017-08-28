@@ -21,18 +21,13 @@ moduloServicios.service('ServicioEjecucionesArchivo', function ServicioEjecucion
 	
 	var self = this;
 	
-	self.listaEjecuciones = [{
-		cedulaKey: '123456789',
-		fechaKey: '9/04/1888',
-		lineasImpresionKey: [
-			{codigo: '50525', descripcionLinea: 'Case #50525: 3', numeroBolsas: 3}
-		]
-	}];
+	self.listaEjecuciones = [];
 	
 	self.adicionarEjecucion = function(cedula, fecha, lineasImpresion) {
 		console.log('Se va a adicionar la ejecucion');
 		
 		console.log('Cedula: '+ cedula);
+		console.log('Lineas de impresion: '+ lineasImpresion);
 		
 		var ejecucionArchivo = {
 			cedulaKey: cedula,
