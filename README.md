@@ -1,9 +1,6 @@
 # LazyLoading
-Repositorio creado para almacenar el mini-proyecto de seleccion.
 
 Buen dia,
-
-Se ha creado este repositorio con el proposito de contener los archivos relacionados con la implementacion de la solucion para el ejercicio llamado "Carga Perezoza" (Lazy Loading).
 
 Los archivos contenidos en este repositorio van desde la implementacion de las clases del microservicio hasta los archivos web que contienen el frontend de la aplicacion o interfaz al usuario. La aplicacion fue implementada utilizando varias herramientas o componentes principales los cuales son descritos:
 
