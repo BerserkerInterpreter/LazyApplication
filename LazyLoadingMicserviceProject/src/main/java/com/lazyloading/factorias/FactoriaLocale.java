@@ -1,4 +1,4 @@
-package com.lazyloading.factorias;
+package com.lazyloading.factoria;
 
 import java.util.Locale;
 
@@ -13,23 +13,18 @@ public class FactoriaLocale {
 	
 	@Loggable
 	public Locale getLocale() {
-		
 		String lenguaje = UtilidadConfiguracionSistema.getLenguaje();
 		String pais = UtilidadConfiguracionSistema.getPais();
-		
 		if(locale == null) {
 			locale = new Locale.Builder().setLanguage(lenguaje).setRegion(pais).build();
 		}
-		
 		return locale;
 	}
 	
 	public static FactoriaLocale getFactoriaLocale() {
-		
 		if(factoriaLocale == null){
 			factoriaLocale = new FactoriaLocale();
 		}
-		
 		return factoriaLocale;
 	}
 	
