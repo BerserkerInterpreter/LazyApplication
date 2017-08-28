@@ -1,19 +1,31 @@
-package com.lazyloading.controladores;
+package com.lazyloading.controlador;
 
 import java.util.Set;
 
 import com.jcabi.aspects.Loggable;
-import com.lazyloading.excepciones.ExcepcionDias;
-import com.lazyloading.excepciones.ExcepcionDiasPeriodo;
-import com.lazyloading.factorias.FactoriaDiasPeriodo;
+import com.lazyloading.excepcion.ExcepcionDias;
+import com.lazyloading.excepcion.ExcepcionDiasPeriodo;
+import com.lazyloading.factoria.FactoriaDiasPeriodo;
+import com.lazyloading.json.adaptador.AdaptadorJSON;
 import com.lazyloading.modelo.DiasPeriodo;
 import com.lazyloading.modelo.LineaImpresion;
-import com.lazyloading.utilidades.UtilidadConversion;
-import com.lazyloading.utilidades.UtilidadRespuestaPorDefecto;
+import com.lazyloading.utilidad.UtilidadConversion;
+import com.lazyloading.utilidad.UtilidadRespuestaPorDefecto;
 
 public class ControladorNumMaxViajes {
 
-	public ControladorNumMaxViajes() {}
+	private static ControladorNumMaxViajes controladorNumMaxViajes;
+	
+	private ControladorNumMaxViajes() {
+		super();
+	}
+	
+	public static ControladorNumMaxViajes getControladorNumMaxViajes() {
+		if(controladorNumMaxViajes == null) {
+			controladorNumMaxViajes = new ControladorNumMaxViajes();
+		}
+		return controladorNumMaxViajes;
+	}
 	
 	@Loggable(Loggable.INFO)
 	public String determinarMaxNumViajes(String diasElementos) {
@@ -28,19 +40,32 @@ public class ControladorNumMaxViajes {
 			listaLineaImpresion = diasPeriodo.verificarDias();
 		} catch (ExcepcionDiasPeriodo edp) {
 			edp.printStackTrace();
-			listaLineaImpresion = UtilidadRespuestaPorDefecto.obtenertLineaImpresion();
+			listaLineaImpresion = this.obtenerLineaImpresionDefecto();
 		} catch(ExcepcionDias ed) {
 			ed.printStackTrace();
-			listaLineaImpresion = UtilidadRespuestaPorDefecto.obtenertLineaImpresion();
+			listaLineaImpresion = this.obtenerLineaImpresionDefecto();
 		} catch(Exception ex) {
 			ex.printStackTrace();
-			listaLineaImpresion = UtilidadRespuestaPorDefecto.obtenertLineaImpresion();
+			listaLineaImpresion = this.obtenerLineaImpresionDefecto();
 		}
-		
-		String listaLineaImpresionJSON = UtilidadConversion.convertirListaJSON(listaLineaImpresion);
+	
+		String listaLineaImpresionJSON = this.obtenerListaLineaImpresionJSON(listaLineaImpresion);
 		
 		return listaLineaImpresionJSON;
 		
+	}
+	
+	private String obtenerListaLineaImpresionJSON(
+			Set<LineaImpresion> listaLineaImpresion) {
+		AdaptadorJSON<LineaImpresion> adaptadorJSON = new AdaptadorJSON<>();
+		String listaLineaImpresionJSON = 
+				UtilidadConversion.convertirListaJSON(listaLineaImpresion, LineaImpresion.class, adaptadorJSON);
+		return listaLineaImpresionJSON;
+	}
+	
+	private Set<LineaImpresion> obtenerLineaImpresionDefecto() {
+		Set<LineaImpresion> listaLineaImpresion = UtilidadRespuestaPorDefecto.obtenerLineaImpresion();
+		return listaLineaImpresion;
 	}
 	
 }
