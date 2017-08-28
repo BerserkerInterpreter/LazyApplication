@@ -1,4 +1,4 @@
-# LazyLoadingTechAndSolve
+# LazyLoading
 Repositorio creado para almacenar el mini-proyecto de seleccion.
 
 Buen dia,
