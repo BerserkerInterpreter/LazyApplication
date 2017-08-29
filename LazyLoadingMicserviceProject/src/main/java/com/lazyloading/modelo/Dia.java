@@ -1,32 +1,34 @@
 package com.lazyloading.modelo;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import com.jcabi.aspects.Loggable;
-import com.lazyloading.excepciones.ExcepcionDias;
-import com.lazyloading.utilidades.UtilidadValidadorDia;
+import com.lazyloading.excepcion.ExcepcionDias;
+import com.lazyloading.utilidad.UtilidadValidadorDia;
 
 public class Dia implements Comparable<Dia>{
 
-	private int numeroDiaFisico;
+	private Integer numeroDia;
+	private Integer cantidadElementos;
 	private List<Elemento> listaElementos;
 	private LineaImpresion lineaImpresion;
 	
-	private int numeroDia;
-	
-	public Dia() {}
-	
-	public Dia(int numero, List<Elemento> listaElementos) {
+	public Dia() {
 		super();
-		this.numeroDiaFisico = numero;
+	}
+	
+	public Dia(int cantidadElementos, List<Elemento> listaElementos) {
+		super();
+		this.cantidadElementos = cantidadElementos;
 		this.listaElementos = listaElementos;
 	}
 
-	public int getNumeroFisico() {
-		return numeroDiaFisico;
+	public Integer getCantidadElementos() {
+		return cantidadElementos;
 	}
-	public void setNumeroFisico(int numeroFisico) {
-		this.numeroDiaFisico = numeroFisico;
+	public void setCantidadElementos(Integer cantidadElementos) {
+		this.cantidadElementos = cantidadElementos;
 	}
 	public List<Elemento> getListaElementos() {
 		return listaElementos;
@@ -41,50 +43,53 @@ public class Dia implements Comparable<Dia>{
 		this.lineaImpresion = lineaImpresion;
 	}
 
-	public int getNumeroDia() {
+	public Integer getNumeroDia() {
 		return numeroDia;
 	}
-	public void setNumeroDia(int numeroDia) {
+	public void setNumeroDia(Integer numeroDia) {
 		this.numeroDia = numeroDia;
 	}
 
 	@Loggable
 	public LineaImpresion verificarElementos() throws ExcepcionDias  {
-		
 		int cuenta = 0;
 		UtilidadValidadorDia.verificarListaElementos(listaElementos);
-		
 		int atras = listaElementos.size() - 1;
 		int adelante = 0;
-		
 		while(adelante < atras){
-			
 			UtilidadValidadorDia.verificarAtrasListaElementos(atras, listaElementos);
-			
 			Elemento elemento = listaElementos.get(atras);
 			Peso peso = elemento.getPeso();
 			int valorPeso = peso.getValor();
 			atras--;
-			
 			if(valorPeso < 50) {
 				adelante += (50 / valorPeso);
 			}
-			
 			cuenta++;
 		}
-		
-		LineaImpresion lineaImpresion = new LineaImpresion();
-		lineaImpresion.setDia(this);
-		lineaImpresion.setNumeroBolsas(cuenta);
-		lineaImpresion.getDescripcionLinea();
-		
+		lineaImpresion = this.obtenerLineaImpresion(this, cuenta);
 		return lineaImpresion;
-		
+	}
+	
+	private LineaImpresion obtenerLineaImpresion(Dia dia, Integer numeroBolsas) {
+		LineaImpresion lineaImpresion = new LineaImpresion();
+		lineaImpresion.setDia(dia);
+		lineaImpresion.setNumeroBolsas(numeroBolsas);
+		lineaImpresion.getDescripcionLinea();
+		return lineaImpresion;
+	}
+	
+	public void adicionarElemento(Elemento elemento) {
+		List<Elemento> listaElementos = this.getListaElementos();
+		if(listaElementos == null) {
+			listaElementos = new LinkedList<>();
+			this.setListaElementos(listaElementos);
+		}
+		listaElementos.add(elemento);
 	}
 
 	@Override
 	public int compareTo(Dia otroDia) {
-		
 		if(otroDia == null) {
 			return 1;
 		} else if(this.getNumeroDia() == otroDia.getNumeroDia()) {
@@ -94,12 +99,12 @@ public class Dia implements Comparable<Dia>{
 		} else {
 			return -1;
 		}
-		
 	}
 	
 	@Override
 	public String toString() {
-		String descripcion = String.format("[numeroDia = %d]", numeroDia);
+		String descripcion = 
+				String.format("[numeroDia = %d, cantidadElementos = %d]", numeroDia, cantidadElementos);
 		return descripcion;
 	}
 }
