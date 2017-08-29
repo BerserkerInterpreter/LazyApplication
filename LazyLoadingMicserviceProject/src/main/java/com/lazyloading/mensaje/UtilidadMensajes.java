@@ -20,5 +20,4 @@ public final class UtilidadMensajes {
 		String mensaje = resourceBundle.getString(key);
 		return mensaje;
 	}
-	
 }
