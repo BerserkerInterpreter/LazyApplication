@@ -45,29 +45,31 @@ public class Elemento implements Comparable<Elemento> {
 	public void setPeso(int intPeso, String strUnidadPeso) {
 		UnidadPeso unidadPeso = new UnidadPeso();
 		unidadPeso.setDescripcion(strUnidadPeso);
-		
 		Peso peso = new Peso();
 		peso.setValor(intPeso);
 		peso.setUnidadPeso(unidadPeso);
-		
 		this.setPeso(peso);
 	}
 
 	@Override
 	public int compareTo(Elemento otroElemento) {
-		
 		int diferencia = 1;
 		if(otroElemento.getPeso() == null) {
 			return diferencia;
 		} 
-		
 		diferencia = peso.compareTo(otroElemento.getPeso());
 		return diferencia;
 	}
 	
 	@Override
 	public String toString() {
-		String descripcion = String.format("[peso = %d]", peso.getValor());
+		Integer valorPeso = 0;
+		String descripcion = null;
+		if(peso != null) {
+			descripcion = String.format("[peso = %d]", peso.getValor());
+		} else {
+			descripcion = String.format("[peso = %d]", valorPeso);
+		}
 		return descripcion;
 	}
 	
