@@ -28,14 +28,14 @@ public class Peso implements Comparable<Peso> {
 
 	@Override
 	public int compareTo(Peso otroPeso) {
-		
-		if(this.getValor() == otroPeso.getValor()) {
+		if(otroPeso == null) {
+			return 1;
+		} if(this.getValor() == otroPeso.getValor()) {
 			return 0;
 		} else if(this.getValor() > otroPeso.getValor()) {
 			return 1;
 		} else {
 			return -1;
 		}
-		
 	}
 }
