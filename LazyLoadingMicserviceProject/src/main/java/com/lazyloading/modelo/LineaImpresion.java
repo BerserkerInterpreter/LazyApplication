@@ -5,7 +5,7 @@ public class LineaImpresion implements Comparable<LineaImpresion>{
 	private int codigo;
 	private String descripcionLinea;
 	private Dia dia;
-	private int numeroBolsas;
+	private Integer numeroBolsas;
 	
 	public LineaImpresion() {}
 	
@@ -21,7 +21,13 @@ public class LineaImpresion implements Comparable<LineaImpresion>{
 		this.codigo = codigo;
 	}
 	public String getDescripcionLinea() {
-		descripcionLinea = String.format("Case #%d: %d", dia.getNumeroDia(), numeroBolsas);
+		int numeroDia = 0;
+		if(this.getDia() != null) {
+			numeroDia = dia.getNumeroDia();
+		} else {
+			numeroBolsas = null;
+		}
+		descripcionLinea = String.format("Case #%d: %d", numeroDia, numeroBolsas);
 		return descripcionLinea;
 	}
 	public void setDescripcionLinea(String descripcionLinea) {
@@ -47,6 +53,9 @@ public class LineaImpresion implements Comparable<LineaImpresion>{
 
 	@Override
 	public int compareTo(LineaImpresion otraLineaImpresion) {
+		if(otraLineaImpresion.getDia() == null) {
+			return 1;
+		}
 		int diferencia = this.getDia().compareTo(otraLineaImpresion.getDia());
 		return diferencia;
 	}
