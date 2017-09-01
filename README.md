@@ -10,10 +10,16 @@ Los archivos contenidos en este repositorio van desde la implementacion de las c
   4. Javascript
   5. HTML 5
   6. Eclipse Neon 3
+  
+Se colocan los workspaces respectivos bajo la carpeta denominada "workspaces". Los workspaces funcionan bajo la plataforma eclipse. 
 
-Se coloca un enlace o url que apunta hacia la ubicacion de los workspaces (archivos de trabajo) que contienen tanto el workspace del microservicio como tambien el workspace de la aplicacion web desarrollada en AngularJS (los componentes estan bajo la carpeta denominada "componentes" comprimidos en un archivo de tipo rar):
+EJECUCION COMO UN ARCHIVO EJECUTABLE JAR
 
-  * 
+El microservicio LazyLoading puede ser ejecutado como archivo .jar de java. Para realizar este tipo de ejecucion es necesario descargar dos componentes: LazyLoading4.jar y LazyLoading4_lib.tar.gz (se debe descomprimir) y almacenarlos en una carpeta. Despues, se puede proceder a ejecutar el componente LazyLoading4.jar con la siguiente sentencia java: java -jar LazyLoading4.jar lo cual iniciara el framework Spring Boot con el microservicio desplegado "http://localhost:8080" (direccion por defecto).
+
+El componente LazyLoading4_lib contiene todas las librerias necesarias para la ejecucion del microservicio implementado.
+
+EJECUCION EN ECLIPSE
   
 Para ejecutar los componentes solo es necesario abrir los workspaces en el IDE Eclipse (preferiblemente la version Neon 3) una vez cuente con el plugin instalado y descargado llamado "Spring IDE 3.8.4 RELEASE", un servidor TOMCAT version 8.5 (instalado y configurado en el IDE Eclipse). Posteriormente se inicia el microservicio como un servicio de tipo Spring Boot y se ejecuta el archivo index.html del componente web en el servidor tomcat, o se introduce la siguiente direccion:
 
