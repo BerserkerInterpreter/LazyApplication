@@ -13,7 +13,7 @@ Los archivos contenidos en este repositorio van desde la implementacion de las c
 
 Se coloca un enlace o url que apunta hacia la ubicacion de los workspaces (archivos de trabajo) que contienen tanto el workspace del microservicio como tambien el workspace de la aplicacion web desarrollada en AngularJS (los componentes estan bajo la carpeta denominada "componentes" comprimidos en un archivo de tipo rar):
 
-  * https://drive.google.com/open?id=0Bzcv9iF_tEtAa1hYOWNsMEN4RXM
+  * 
   
 Para ejecutar los componentes solo es necesario abrir los workspaces en el IDE Eclipse (preferiblemente la version Neon 3) una vez cuente con el plugin instalado y descargado llamado "Spring IDE 3.8.4 RELEASE", un servidor TOMCAT version 8.5 (instalado y configurado en el IDE Eclipse). Posteriormente se inicia el microservicio como un servicio de tipo Spring Boot y se ejecuta el archivo index.html del componente web en el servidor tomcat, o se introduce la siguiente direccion:
 
