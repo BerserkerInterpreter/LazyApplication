@@ -13,6 +13,8 @@ Los archivos contenidos en este repositorio van desde la implementacion de las c
   
 Se colocan los workspaces respectivos bajo la carpeta denominada "workspaces". Los workspaces funcionan bajo la plataforma eclipse. 
 
+El archivo utilizado para probar la funcionalidad del aplicativo implementado se encuentra bajo la carpeta workspaces con el nombre: lazy_loading_example_input.txt. Este archivo debe ser suministrado en la pagina "formulario_archivo.html".
+
 EJECUCION COMO UN ARCHIVO EJECUTABLE JAR
 
 El microservicio LazyLoading puede ser ejecutado como archivo .jar de java. Para realizar este tipo de ejecucion es necesario descargar dos componentes: LazyLoading4.jar y LazyLoading4_lib.tar.gz (se debe descomprimir) y almacenarlos en una carpeta. Despues, se puede proceder a ejecutar el componente LazyLoading4.jar con la siguiente sentencia java: java -jar LazyLoading4.jar lo cual iniciara el framework Spring Boot con el microservicio desplegado "http://localhost:8080" (direccion por defecto).
