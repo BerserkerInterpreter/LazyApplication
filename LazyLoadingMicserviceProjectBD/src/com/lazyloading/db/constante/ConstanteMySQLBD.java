@@ -26,9 +26,10 @@ public enum ConstanteMySQLBD {
 	
 	public static String getURLCompleta() {
 		String urlFormat = UtilidadMensajes.buscarMensaje(MYSQL_URL_FORMAT.getValor());
-		String urlCompleta = String.format(urlFormat, MYSQL_HOST_ADDRESS.getValor(),
-												MYSQL_HOST_PORT.getValor(),
-												MYSQL_HOST_DATABASE.getValor());
+		String urlCompleta = 
+			String.format(urlFormat, MYSQL_HOST_ADDRESS.getValor(),
+						MYSQL_HOST_PORT.getValor(),
+						MYSQL_HOST_DATABASE.getValor());
 		return urlCompleta;
 	}
   
