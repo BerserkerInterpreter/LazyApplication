@@ -29,6 +29,8 @@ Para ejecutar los componentes solo es necesario abrir los workspaces en el IDE E
   
 Una vez se haya introducido las direcciones respectivas aparecera una pantalla muy simple la cual requiere un campo llamado "cedula" y un archivo que contiene los datos a procesar (la cantidad de dias y elementos que llevara el mensajero). Se introduce la cedula y el archivo dado y se ejecuta el boton llamado "Submit". Despues el microservicio procesara los datos incluidos dentro del archivo y retornara un resultado el cual aparecera en una tabla de otra pagina denominada "ejecucion archivo".
 
+NOTA: Se esta desarrollando el servicio de persistencia que almacenara los objetos en una base de datos MySQL.
+
 Cualquier inquietud que tengan no olviden comunicarse conmigo al correo "jdsaldarriaga7@gmail.com".
 
 Muchas gracias.
