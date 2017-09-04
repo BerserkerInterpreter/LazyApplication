@@ -2,7 +2,7 @@
 
 Buen dia,
 
-La explicacion de la funcionalidad y procesamiento del algoritmo implementado se encuentra en el archivo "Lazy Loading.docx" bajo el directorio workspaces.
+La explicacion de la funcionalidad y procesamiento del algoritmo implementado se encuentra en el archivo "Cargue Perezoso.docx" bajo el directorio workspaces.
 
 Los archivos contenidos en este repositorio van desde la implementacion de las clases del microservicio hasta los archivos web que contienen el frontend de la aplicacion o interfaz al usuario. La aplicacion fue implementada utilizando varias herramientas o componentes principales los cuales son descritos:
 
