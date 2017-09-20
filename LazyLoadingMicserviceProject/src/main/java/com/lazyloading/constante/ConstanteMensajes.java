@@ -2,19 +2,17 @@ package com.lazyloading.constante;
 
 public enum ConstanteMensajes {
 
-	OBTENER_INTEGER("com.lazyloading.mensajes.excepcion.obtenerinteger"),
-	VERIFICAR_DIAS_ELEMENTOS("com.lazyloading.mensajes.excepcion.verificarDiasElementos"),
-	VERIFICAR_ARRAY_DIAS_ELEMENTOS("com.lazyloading.mensajes.excepcion.verificarArrayDiasElementos"),
-	VERIFICAR_VECES_UNO("com.lazyloading.mensajes.excepcion.verificarVecesUno"),
-	VERIFICAR_VECES_DOS("com.lazyloading.mensajes.excepcion.verificarVecesDos"),
-	VERIFICAR_CONTADOR_ARR_DIAS_ELEMENTOS("com.lazyloading.mensajes.excepcion.verificarContadorArrDiasElementos"),
-	VERIFICAR_LISTA_ELEMENTOS_NULL("com.lazyloading.mensajes.excepcion.verificarListaElementosNull"),
-	VERIFICAR_LISTA_ELEMENTOS_VACIA("com.lazyloading.mensajes.excepcion.verificarListaVacia"),
-	VERIFICAR_ATRAS_LISTA_ELEMENTOS("com.lazyloading.mensajes.excepcion.verificarAtrasListaElementos"),
-	OBTENER_LINEA_IMPRESION("com.lazyloading.mensajes.excepcion.lineaimpresion"),
-	LISTA_JSON_NULL("com.lazyloading.mensajes.excepcion.listajsonnull"),
-	CLASE_ELEMENTO_JSON_NULL("com.lazyloading.mensajes.excepcion.claseelementojsonnull"),
-	ADAPTADOR_JSON_NULL("com.lazyloading.mensajes.excepcion.adaptadorjsonnull");
+	DATOS_EJECUCION_NULL("com.lazyloading.mensajes.excepcion.datosejecucionnull"),
+	ERROR_INSERTAR_EJECUCION("com.lazyloading.mensajes.excepcion.errorinsertarejecucion"), 
+	ERROR_INSERTAR_LINEAS_IMPRESION("com.lazyloading.mensajes.excepcion.errorinsertarlineasimpresion"), 
+	ERROR_ADICIONAR_EJECUCION("com.lazyloading.mensajes.excepcion.erroradicionarejecucion"), 
+	ERROR_INICIALIZAR_CONTEXTO("com.lazyloading.mensajes.excepcion.errorinicializarcontexto"), 
+	ERROR_NUMERO_IDENTIFACION_EJECUCION("com.lazyloading.mensajes.excepcion.errornumeroidentificacionejecucion"), 
+	ERROR_VALIDAR_FECHA_EJECUCION("com.lazyloading.mensajes.excepcion.errorvalidarfechaejecucion"), 
+	ERROR_VALIDAR_LINEAS_IMPRESION("com.lazyloading.mensajes.excepcion.errorvalidarlineasimpresion"), 
+	ERROR_PROCESAR_FECHA("com.lazyloading.mensajes.excepcion.errorprocesarfecha"), 
+	ERROR_ROLLBACK_CONEXION_BD("com.lazyloading.mensajes.excepcion.errorrollbackconexionbd"), 
+	DATOS_EJECUCION_VACIO("com.lazyloading.mensajes.excepcion.datosejecucionvacio");
 	
 	private String key;
 	
